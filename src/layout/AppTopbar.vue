@@ -63,8 +63,8 @@ const isOutsideClicked = (event) => {
 <template>
     <div class="layout-topbar">
         <router-link to="/" class="layout-topbar-logo">
-            <img :src="logoUrl" alt="logo" />
-            <span>SAKAI</span>
+            <img src="https://crocobet.com/assets/icons/logo.svg" alt="logo" />
+            <span>CROCOBET</span>
         </router-link>
 
         <button class="p-link layout-menu-button layout-topbar-button" @click="onMenuToggle()">

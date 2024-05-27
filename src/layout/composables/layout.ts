@@ -1,8 +1,12 @@
 import { toRefs, reactive, computed } from 'vue';
 
-const layoutConfig = reactive({
+const layoutConfig = reactive<{
+    darkTheme: string;
+    scale: number;
+    [key: string]: unknown
+}>({
     ripple: true,
-    darkTheme: false,
+    darkTheme: '',
     inputStyle: 'outlined',
     menuMode: 'static',
     theme: 'aura-light-green',
@@ -20,11 +24,12 @@ const layoutState = reactive({
 });
 
 export function useLayout() {
-    const setScale = (scale) => {
+    const setScale = (scale: number) => {
         layoutConfig.scale = scale;
     };
 
-    const setActiveMenuItem = (item) => {
+    // TODO! FIX INTERFACE
+    const setActiveMenuItem = (item: any) => {
         layoutConfig.activeMenuItem = item.value || item;
     };
 
